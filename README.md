@@ -9,7 +9,8 @@
 * [Symspellpy](https://github.com/mammothb/symspellpy)
 ## Installation 
 ```
-pip install requirements.txt ```
+pip install requirements.txt 
+```
 ## Usage
 ###### Without Autocorrect
 It takes < 1sec and If rules are applied it is more effective than autocorrect mode
