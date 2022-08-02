@@ -17,14 +17,14 @@ It takes < 1sec and If rules are applied it is more effective than autocorrect m
 ``` python
 import translate
 text = "mukera"
-trans_word = translator.translate(text)
+trans_word = translate.translate(text)
 ```
 ###### +Autocorrect
 Delay upto 10 sec
 ``` python
 import translate
 text = "mukera"
-trans_word = translator.translate(text)
+trans_word = translate.translate(text)
 corrected_word = translate.auto_correct_trans(trans_word)
 ```
 ## Rules 
