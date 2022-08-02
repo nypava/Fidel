@@ -29,7 +29,6 @@ corrected_word = translate.auto_correct_trans(trans_word)
 ```
 ## Rules 
 There are some rules that should applied when writing text to be translate 
-They are :- 
  1. For 1st alphabets (ለግዕዝ ) use "e" example: "le" - ለ
  2. For 2nd alphabets ( ለካእብ ) use "u" example: "lu" - ሉ
  3. For 3rd alphabets (ለሳልስ ) use "i" example: "li" - ሊ
