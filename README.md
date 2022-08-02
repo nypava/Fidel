@@ -9,7 +9,7 @@
 * [Symspellpy](https://github.com/mammothb/symspellpy)
 ## Installation 
 ```
-pip install requirements.txt 
+pip install -r requirements.txt 
 ```
 ## Usage
 ###### Without Autocorrect
