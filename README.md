@@ -2,7 +2,7 @@
 ## What is Fidele / ፊደል ?
 
 **Fidele** is a tool that can change Amharic language that writen in English alphabet transformer to pure Amharic alphabet characters 
- * Used in social medias specially on telegram 
+ * It will be Used for socialmedias specially on telegram 
 ## Dependencies
 * [Googletrans](https://py-googletrans.readthedocs.io) 
 * [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
