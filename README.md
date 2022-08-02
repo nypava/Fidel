@@ -46,7 +46,7 @@ it delay 200 sec for 1M word so I scrap 20 pages to decrease the delay if you wa
 word list from [this web](https://corpora.fi.muni.cz/habit/run.cgi/wordlist?corpname=amwac16&refs=&wlmaxitems=1000&wlsort=f&subcnorm=freq&corpname=amwac16&reload=&wlattr=word&usengrams=0&ngrams_n=2&ngrams_max_n=2&nest_ngrams=0&wlpat=&wlminfreq=1&wlmaxfreq=0&wlfile=&wlblacklist=&wlnums=frq&wltype=simple&wlpage) 
 
 ## Donate and feedback :)
-contact : [telegram](t.me/ny_off_tm)
+contact : [telegram](https://t.me/ny_off_tm)
 
 
 
