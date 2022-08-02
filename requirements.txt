@@ -1,1 +1,2 @@
-symspellpy,googletrans
+symspellpy == 6.7.1
+googletrans == 3.0.0
