@@ -36,8 +36,8 @@ There are some rules that should applied when writing text to be translate
  5. For 5th alphabets (ለሀምስ ) use "ie" example: "lie" - ሌ
  6. For 6th alphabets (ለሳድስ) use only vowel example: "l" - ል
  7. For 7th alphabets (ለሳብዕ) use "o" example: "lo" - ሎ
- 8. For 8th alphabets(ለዲቃላ ቃላት) use "ua" example - ሏ
- 9. The above rules not works for "አ" and " " family in  "አ" and "ሀ" 4th alphabets are removed because it have the same sound as 1th alphabet
+ 8. For 8th alphabets(ለዲቃላ ቃላት) use "ua" example: "ua" -  ሏ
+ 9. The above rules not works for "አ" and "ሀ" family in  "አ" and "ሀ" 4th alphabets are removed because it have the same sound as 1th alphabet
  10. for "አ" and "ሀ" 1st alphabets uses " a " 
 ## More About Corrector
 In amharic threre are too many words and I try to scrap some words from [this web](https://corpora.fi.muni.cz/habit/run.cgi/wordlist?corpname=amwac16&refs=&wlmaxitems=1000&wlsort=f&subcnorm=freq&corpname=amwac16&reload=&wlattr=word&usengrams=0&ngrams_n=2&ngrams_max_n=2&nest_ngrams=0&wlpat=&wlminfreq=1&wlmaxfreq=0&wlfile=&wlblacklist=&wlnums=frq&wltype=simple&wlpage) there are around 1 million words 
