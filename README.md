@@ -1,5 +1,5 @@
 # Fidele / ፊደል
-## What is Fidele / ፊደል ?
+## What is Fidel / ፊደል ?
 
 **Fidele** is a tool that can change Amharic language that written in English alphabet translater to pure Amharic alphabet characters 
  * It will be Used for social medias specially on telegram 
@@ -9,7 +9,7 @@
 * [Symspellpy](https://github.com/mammothb/symspellpy)
 ## Installation 
 ```
-pip install -r requirements.txt 
+pip install fidel
 ```
 ## Usage
 ###### Without Autocorrect
