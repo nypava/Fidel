@@ -17,7 +17,7 @@ It takes < 1sec and If rules are applied it is more effective than autocorrect m
 ``` python
 from fidel import translate
 text = "mukera"
-trans_word = translate.translate(text)
+trans_word = translate(text)
 ```
 ###### +Autocorrect
 Delay upto 10 sec
