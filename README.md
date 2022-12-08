@@ -22,10 +22,10 @@ trans_word = translate.translate(text)
 ###### +Autocorrect
 Delay upto 10 sec
 ``` python
-from fidel import translate
+from fidel import auto_correct_trans,translate
 text = "mukera"
-trans_word = translate.translate(text)
-corrected_word = translate.auto_correct_trans(trans_word)
+trans_word = translate(text)
+corrected_word = auto_correct_trans(trans_word)
 ```
 ## Rules 
 There are some rules that should applied when writing text to be translate 
