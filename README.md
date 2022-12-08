@@ -1,4 +1,4 @@
-# Fidele / ፊደል
+# Fidel / ፊደል
 ## What is Fidel / ፊደል ?
 
 **Fidele** is a tool that can change Amharic language that written in English alphabet translater to pure Amharic alphabet characters 
@@ -15,14 +15,14 @@ pip install fidel
 ###### Without Autocorrect
 It takes < 1sec and If rules are applied it is more effective than autocorrect mode
 ``` python
-import translate
+from fidele import translate
 text = "mukera"
 trans_word = translate.translate(text)
 ```
 ###### +Autocorrect
 Delay upto 10 sec
 ``` python
-import translate
+from fidele import translate
 text = "mukera"
 trans_word = translate.translate(text)
 corrected_word = translate.auto_correct_trans(trans_word)
