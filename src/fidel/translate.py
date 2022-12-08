@@ -1,9 +1,9 @@
 # import important modules
-from word import sep_words
-from distance import distance
+from fidel.word import sep_words
+from fidel.distance import distance
 from googletrans import Translator 
 from symspellpy import SymSpell, Verbosity
-from dictionary import dict 
+from fidel.dictionary import dict 
 def translate(text):
 	list_inp = sep_words(text)  # separating words
 	added_word = "" 
