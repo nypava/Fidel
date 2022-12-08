@@ -15,14 +15,14 @@ pip install fidel
 ###### Without Autocorrect
 It takes < 1sec and If rules are applied it is more effective than autocorrect mode
 ``` python
-from fidele import translate
+from fidel import translate
 text = "mukera"
 trans_word = translate.translate(text)
 ```
 ###### +Autocorrect
 Delay upto 10 sec
 ``` python
-from fidele import translate
+from fidel import translate
 text = "mukera"
 trans_word = translate.translate(text)
 corrected_word = translate.auto_correct_trans(trans_word)
