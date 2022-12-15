@@ -1,53 +1,90 @@
-# Fidel / ፊደል
-## What is Fidel / ፊደል ?
+# **Fidel / ፊደል**
+## What is **Fidel / ፊደል** ?
+**Fidel** is a python package that can change Amharic language that written in English alphabet to Amharic alphabet characters. <br>
+**| For example: abebe beso bela -> አበበ በሶ በላ**
+#
 
-**Fidel** is a tool that can change Amharic language that written in English alphabet translater to pure Amharic alphabet characters 
- * It will be Used for social medias specially on telegram 
-## Dependencies
-* [Googletrans](https://py-googletrans.readthedocs.io) 
-* [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+## **Dependencies**
 * [Symspellpy](https://github.com/mammothb/symspellpy)
-## Installation 
+#
+
+## **Installation** 
 ```
 pip install fidel
 ```
-## Usage
-###### Without Autocorrect
-It takes < 1sec and If rules are applied it is more effective than autocorrect mode
+#
+
+## **Usage**
+
+### **Without Autocorrect**
 ``` python
-from fidel import translate
-text = "mukera"
-trans_word = translate(text)
+from fidel import Translate
+text = "bexam xru sew new"
+trans_word = Translate(text=text,AutoCorrect=False).translate()
+print(trans_word)
 ```
-###### +Autocorrect
-Delay upto 10 sec
+output
+```
+በጣም ጥሩ ሰው ነው
+```
+
+### **Autocorrect Mode**
 ``` python
-from fidel import auto_correct_trans,translate
-text = "mukera"
-trans_word = translate(text)
-corrected_word = auto_correct_trans(trans_word)
+from fidel import Translate
+text = "betam tiru sew nw"
+trans_word = Translate(text=text,AutoCorrect=False).translate()
+corrected_word = Translate(text=text,AutoCorrect=True).translate()
+print(f"translated : {trans_word}")
+print(f"corrected_word : {corrected_word}")
 ```
-## Rules 
-There are some rules that should applied when writing text to be translate 
- 1. For 1st alphabets (ለግዕዝ ) use "e" example: "le" - ለ
- 2. For 2nd alphabets ( ለካእብ ) use "u" example: "lu" - ሉ
- 3. For 3rd alphabets (ለሳልስ ) use "i" example: "li" - ሊ
- 4. For 4rh alphabets (ለራዕብ ) use "a" example: "la" - ላ
- 5. For 5th alphabets (ለሀምስ ) use "ie" example: "lie" - ሌ
- 6. For 6th alphabets (ለሳድስ) use only vowel example: "l" - ል
- 7. For 7th alphabets (ለሳብዕ) use "o" example: "lo" - ሎ
- 8. For 8th alphabets(ለዲቃላ ቃላት) use "ua" example: "ua" -  ሏ
- 9. The above rules not works for "አ" and "ሀ" family in  "አ" and "ሀ" 4th alphabets are removed because it have the same sound as 1th alphabet
- 10. for "አ" and "ሀ" 1st alphabets uses " a " 
-## More About Corrector
-In amharic threre are too many words and I try to scrap some words from [this web](https://corpora.fi.muni.cz/habit/run.cgi/wordlist?corpname=amwac16&refs=&wlmaxitems=1000&wlsort=f&subcnorm=freq&corpname=amwac16&reload=&wlattr=word&usengrams=0&ngrams_n=2&ngrams_max_n=2&nest_ngrams=0&wlpat=&wlminfreq=1&wlmaxfreq=0&wlfile=&wlblacklist=&wlnums=frq&wltype=simple&wlpage) there are around 1 million words 
-but as translator its not affortable it have long time delay symspellpy load 5000 words per second which means 
-it delay 200 sec for 1M word so I scrap 20 pages to decrease the delay if you want increase accuracy word_list.txt is changable you can get 
-word list from [this web](https://corpora.fi.muni.cz/habit/run.cgi/wordlist?corpname=amwac16&refs=&wlmaxitems=1000&wlsort=f&subcnorm=freq&corpname=amwac16&reload=&wlattr=word&usengrams=0&ngrams_n=2&ngrams_max_n=2&nest_ngrams=0&wlpat=&wlminfreq=1&wlmaxfreq=0&wlfile=&wlblacklist=&wlnums=frq&wltype=simple&wlpage) 
+output
+```
+translated : በታም ቲሩ ሰው ንው
+corrected_word : በጣም ጥሩ ሰው ነው
+```
+#
 
-## Donate and feedback :)
-contact : [telegram](https://t.me/ny_off_tm)
+## **Rules** 
+There are some **rules** that should be apply when writing the text
+ 1. For **1st alphabets (ለግዕዝ)** use "e" example: "le" - ለ
+ 2. For **2nd alphabets (ለካእብ)** use "u" example: "lu" - ሉ
+ 3. For **3rd alphabets (ለሳልስ)** use "i" example: "li" - ሊ
+ 4. For **4rh alphabets (ለራዕብ)** use "a" example: "la" - ላ
+ 5. For **5th alphabets (ለሀምስ)** use "ie" example: "lie" - ሌ
+ 6. For **6th alphabets (ለሳድስ)** use only vowel example: "l" - ል
+ 7. For **7th alphabets (ለሳብዕ)** use "o" example: "lo" - ሎ
+ 8. For **8th alphabets(ለዲቃላ ቃላት)** use "ua" example: "ua" -  ሏ 
 
+**Note** The above rules may violate for some alphabets family check out ambigous alphabets.
+## **Ambiguous alphabets**
 
+| ግዕዝ | ካእብ | ሳልስ | ራዕብ | ሀምስ | ሳድስ | ሳብዕ |
+|-----|-----|-----|-----|------|-----|-----|
+|  **ሀ**  |  **ሁ**  |  **ሂ**  |  **ሀ**  |  **ሄ**   |  **ህ**  |  **ሆ**  |
+| ha  | hu  | hi  | ha  | hie  |  h  |  ho |
+|  **አ**  |  **ኡ**  |  **ኢ**  |  **ኣ**  |  **ኤ**   |  **እ**  |  **ኦ**  |
+|  a  |  u  |  i  |  a   |  ie  |  e  |  o  |
+|  **ተ**  |  **ቱ**  |  **ቲ**  |  **ታ**  |  **ቴ**   |  **ት**  |  **ቶ**  |
+|  te |  tu  |  ti  |  ta  |  tie   |  t  |  to  |
+|  **ጠ**  |  **ጡ**  |  **ጢ** | **ጣ**  |  **ጤ**   |  **ጥ**  |  **ጦ**  |
+|  xe  |  xu  |  xi  |  xa  |  xie   |  x  |  xo  |
+|  **ቸ**  | **ቹ**  |  **ቺ**  |  **ቻ**  |  **ቼ**   |  **ች**  |  **ቾ**  |
+|  che  |  chu  |  chi  |  cha  |  chie   |  ch  |  cho  |
+|  **ጨ**  |  **ጩ** |  **ጪ**  |  **ጫ**  |  **ጬ**   | **ጭ** |  **ጮ**  |
+|  ce  |  cu  |  ci  |  ca  |  cie   |  c  |  co  |
+|  **ጰ**  |  **ጱ**  |  **ጲ**  |  **ጳ**  |  **ጴ**   |  **ጵ**  |  **ጶ**  |
+|  phe  |  phu  |  phi  |  pha  |  phie   |  ph  |  pho  |
+|  **ፐ**  |  **ፑ**  |  **ፒ**  |  **ፓ**  |  **ፔ**   |  **ፕ**  |  **ፖ**  |
+|  pe  |  pu |  pi  |  pa  |  pie   |  p  |  po  |
 
+**Addition** <br>
+|Alphabets |ሸ| ኘ| ዥ| ጸ| 
+|-----|-----|-----|-----|------|
+|Prefix |sh |gn |zh| ts|
+#
+
+## **Donate and feedback** 
+
+contact me : [![image](https://img.icons8.com/color/20/null/telegram-app--v1.png)](https://t.me/ny_off_tm) [Telegram](https://t.me/ny_off_tm) <br>
+        [![image](https://img.icons8.com/fluency/20/000000/instagram-new.png)](https://www.instagram.com/ny.off.ig/) [Instagram](https://www.instagram.com/ny.off.ig/) 
 
