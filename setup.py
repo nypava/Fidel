@@ -7,8 +7,8 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.4'
-DESCRIPTION = 'Translate Amharic that written in english to Amharic characters'
+VERSION = '0.0.7'
+DESCRIPTION = 'Python package that can change Amharic language that written in English alphabet to Amharic alphabet character.'
 
 setup(
     name="fidel",
@@ -18,8 +18,9 @@ setup(
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    packages=find_packages('src'),
+    packages=['fidel'],
     package_dir={'': 'src'},
+    package_data={'': ['data/*.txt']},
     install_requires=["symspellpy == 6.7.1" ],
     keywords=['python', 'amharic', 'english to amharic', 'ethiopia', 'translate', 'fidel']
 )

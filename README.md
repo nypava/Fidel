@@ -1,6 +1,6 @@
 # **Fidel / ፊደል**
 ## What is **Fidel / ፊደል** ?
-**Fidel** is a python package that can change Amharic language that written in English alphabet to Amharic alphabet characters. <br>
+**Fidel** is a python package that can change Amharic language that written in English alphabet to Amharic alphabet character. <br>
 **| For example: abebe beso bela -> አበበ በሶ በላ**
 #
 
@@ -55,7 +55,7 @@ There are some **rules** that should be apply when writing the text
  7. For **7th alphabets (ለሳብዕ)** use "o" example: "lo" - ሎ
  8. For **8th alphabets(ለዲቃላ ቃላት)** use "ua" example: "ua" -  ሏ 
 
-**Note** The above rules may violate for some alphabets family check out ambigous alphabets.
+**Note** The above rules may violate for some alphabets family check out ambiguous alphabets.
 ## **Ambiguous alphabets**
 
 | ግዕዝ | ካእብ | ሳልስ | ራዕብ | ሀምስ | ሳድስ | ሳብዕ |

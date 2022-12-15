@@ -1,6 +1,10 @@
 from fidel.word import sep_words
 from symspellpy import SymSpell, Verbosity
 from fidel.dictionary import dict 
+import os
+
+PROJECT_DIR = os.path.dirname(__file__)
+
 class Translate():
 	'''
 	Args:
@@ -46,7 +50,7 @@ class func():
 		'''
 		result = "" # Corrected words added to this string
 		sym_spell = SymSpell(max_dictionary_edit_distance=2, prefix_length=7)
-		dictionary_path = "fidel/data/word_list.txt"
+		dictionary_path = os.path.join(PROJECT_DIR,"data/word_list.txt")
 		a = sym_spell.load_dictionary(dictionary_path ,term_index=0, count_index=1,encoding="UTF-8") # Preparing word list dictionary
 		trans_word = text.split(" ") # Translate and split by spaces
 		for word in range(len(trans_word)):
