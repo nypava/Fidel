@@ -2,17 +2,17 @@
 ## What is **Fidel / ፊደል** ?
 **Fidel** is a python package that can change Amharic language that written in English alphabet to Amharic alphabet character. <br>
 **| For example: abebe beso bela -> አበበ በሶ በላ**
-#
+
 
 ## **Dependencies**
 * [Symspellpy](https://github.com/mammothb/symspellpy)
-#
+
 
 ## **Installation** 
 ```
 pip install fidel
 ```
-#
+
 
 ## **Usage**
 
@@ -42,7 +42,7 @@ output
 translated : በታም ቲሩ ሰው ንው
 corrected_word : በጣም ጥሩ ሰው ነው
 ```
-#
+
 
 ## **Rules** 
 There are some **rules** that should be apply when writing the text
@@ -81,7 +81,7 @@ There are some **rules** that should be apply when writing the text
 |Alphabets |ሸ| ኘ| ዥ| ጸ| 
 |-----|-----|-----|-----|------|
 |Prefix |sh |gn |zh| ts|
-#
+
 
 ## **Donate and feedback** 
 
