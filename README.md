@@ -82,9 +82,3 @@ There are some **rules** that should be apply when writing the text
 |-----|-----|-----|-----|------|
 |Prefix |sh |gn |zh| ts|
 
-
-## **Donate and feedback** 
-
-contact me : [![image](https://img.icons8.com/color/20/null/telegram-app--v1.png)](https://t.me/ny_off_tm) [Telegram](https://t.me/ny_off_tm) <br>
-        [![image](https://img.icons8.com/fluency/20/000000/instagram-new.png)](https://www.instagram.com/ny.off.ig/) [Instagram](https://www.instagram.com/ny.off.ig/) 
-
