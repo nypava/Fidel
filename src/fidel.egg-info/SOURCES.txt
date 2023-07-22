@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+src/fidel/__init__.py
+src/fidel/main.py
+src/fidel.egg-info/PKG-INFO
+src/fidel.egg-info/SOURCES.txt
+src/fidel.egg-info/dependency_links.txt
+src/fidel.egg-info/requires.txt
+src/fidel.egg-info/top_level.txt
+src/fidel/data/word_list.txt

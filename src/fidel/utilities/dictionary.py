@@ -1,9 +1,9 @@
-def dict() -> dict:
+def dict(symbol:bool) -> dict:
     '''
         Args:
-           None
-        return:
-            dictionary each alphabets with their English character value  
+           symbol: True - Enable symbol, False - Disable symbol.
+        Return:
+            Dictionary each alphabets with their English character value  
     '''
     
     dic = {"ere":"ኸረ"}   # Dictionary that pairs of Amharic and English letter added
@@ -55,5 +55,13 @@ def dict() -> dict:
             amh_get = amh[index1][index2]
             cons_vow_get = cons_vow[index1][index2]
             dic[cons_vow_get] = amh_get
+    
+    # Add symbols to dictionary if it is True
+    if symbol == True:
+        for key, value in [(".","።"),(",","፣"),(":","፡")]:
+            dic[key] = value
+    else:
+        pass
+
     return dic
    

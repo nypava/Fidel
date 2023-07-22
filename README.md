@@ -12,40 +12,98 @@
 ```
 pip install fidel
 ```
+## **Upgrade**
+```
+pip install --upgrade fidel
+```
 #
+
 
 ## **Usage**
 
-### **Without Autocorrect**
+### **Basic Usage**
 ``` python
 from fidel import Translate
 text = "bexam xru sew new"
-trans_word = Translate(text=text,AutoCorrect=False).translate()
-print(trans_word)
+translated = Translate(text).translate()
+print(translated)
 ```
 output
 ```
 በጣም ጥሩ ሰው ነው
 ```
 
-### **Autocorrect Mode**
+### **Autocorrect**
 ``` python
 from fidel import Translate
 text = "betam tiru sew nw"
-trans_word = Translate(text=text,AutoCorrect=False).translate()
-corrected_word = Translate(text=text,AutoCorrect=True).translate()
-print(f"translated : {trans_word}")
-print(f"corrected_word : {corrected_word}")
+translated = Translate(text=text,autoCorrect=False).translate() # The default is False
+corrected = Translate(text=text,autoCorrect=True).translate()
+print(f"Translated : {translated}")
+print(f"Corrected: {corrected}")
+
 ```
 output
 ```
-translated : በታም ቲሩ ሰው ንው
-corrected_word : በጣም ጥሩ ሰው ነው
+Translated : በታም ቲሩ ሰው ንው
+Corrected: በጣም ጥሩ ሰው ነው
+```
+### **Amharic Symbol**
+``` python 
+from fidel import Translate
+text = "abebe, kebede ena ayele bexam xru sew nachew."
+symbol_true = Translate(text=text,symbol=True).translate() # The default is True
+symbol_false = Translate(text=text,symbol=False).translate()
+print(f"True symbol: {symbol_true}")
+print(f"False symbol: {symbol_false}")
+```
+output
+```
+True symbol:  አበበ፣ ከበደ እና አየለ በጣም ጥሩ ሰው ናቸው።
+False symbol: አበበ, ከበደ እና አየለ በጣም ጥሩ ሰው ናቸው.
+```
+### **Exclude words** and **split words**
+**Exclude words** from being translated.
+- To prevent words from being translate, put the words inside "``" 
+``` python
+from fidel import Translate
+text = "`Alex` xru sew new"
+translated = Translate(text).translate()
+print(translated)
+
+```
+output
+```
+Alex ጥሩ ሰው ነው
+```
+**Split words**
+- To prevent words from being ዲቃላ (The eigth letters) we should put "|" between consonants.
+``` python
+from fidel import Translate
+text = "ljtua t|sewer" # Without "|" the output is "ልጅቷ ጸወር"
+translated = Translate(text).translate()
+print(translated)
+```
+output
+```
+ልጅቷ ትሰወር
+```
+
+### **Reverse Translate**
+``` python
+from fidel import Reverse
+text = "በጣም ጥሩ ሰው ነው።"
+reversed = Reverse(text, symbol=True) # The default symbol value is True 
+print(reversed)
+```
+output
+```
+betam xru sew nw.
 ```
 #
 
 ## **Rules** 
-There are some **rules** that should be apply when writing the text
+There are some **rules** that should be apply when writing the text.
  1. For **1st alphabets (ለግዕዝ)** use "e" example: "le" - ለ
  2. For **2nd alphabets (ለካእብ)** use "u" example: "lu" - ሉ
  3. For **3rd alphabets (ለሳልስ)** use "i" example: "li" - ሊ
@@ -81,10 +139,3 @@ There are some **rules** that should be apply when writing the text
 |Alphabets |ሸ| ኘ| ዥ| ጸ| 
 |-----|-----|-----|-----|------|
 |Prefix |sh |gn |zh| ts|
-#
-
-## **Donate and feedback** 
-
-contact me : [![image](https://img.icons8.com/color/20/null/telegram-app--v1.png)](https://t.me/ny_off_tm) [Telegram](https://t.me/ny_off_tm) <br>
-        [![image](https://img.icons8.com/fluency/20/000000/instagram-new.png)](https://www.instagram.com/ny.off.ig/) [Instagram](https://www.instagram.com/ny.off.ig/) 
-

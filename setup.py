@@ -7,14 +7,14 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '0.0.7'
+VERSION = '0.0.8'
 DESCRIPTION = 'Python package that can change Amharic language that written in English alphabet to Amharic alphabet character.'
 
 setup(
     name="fidel",
     version=VERSION,
     author="Niftalem Yeneneh",
-    author_email="n.y.official.em@gmail.com",
+    author_email="ny.dev0.em@gmail.com",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,

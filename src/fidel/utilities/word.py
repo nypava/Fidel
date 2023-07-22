@@ -1,46 +1,48 @@
+from fidel.helpers.filter import filter_change
+
 def sep_words(text:str) -> str:
 	'''
-	separate the text 
-		Args:
-			text : string that being separated
-		Return:
-			separated text   
+	Separate the text.
+	Args:
+		text: String that being separated.
+	Return:
+		Separated text.
 	'''
+	text, filtered_words = filter_change(text)
 	final_text = f" {text.lower()} " # Format the text
-	words = [] # List that the separated words added
-	index = 0 # Index
-	vowles = "aeiou" # Vowles
+	vowles = "aeiou" # Vowles letters list
 	c_pass = False # Used for special cases
-	c2_pass = False # Used for special cases
-	con = "bcdfghjklmnpqrstvwxyz" # Consonant
-	al_alpha = f"{con}{vowles}" # Alphabet
+	con = "bcdfghjklmnpqrstvwxyz" # Consonant letters list
+	all_alpha = f"{con}{vowles}" # All letters
+	words = [] # List that the separated words added 
+	filtered_index = 0 # unchanged words index
 	try:
-		for letter in final_text: 
+		for index, letter in enumerate(final_text): 
 			if letter in con:
 				# Special case on "gn" -> ግን
-				if letter in "g" and final_text[index+1] in "n" and final_text[index+2 ] not in al_alpha and final_text[index-1] not in al_alpha:
+				if letter in "g" and final_text[index+1] in "n" and final_text[index+2] not in all_alpha and final_text[index-1] not in all_alpha:
 					words.append(letter)
 				# Special case on "gn(vowles) " -> የ ኘ ዘሮች
-				elif letter in "g" and final_text[index+1] in "n" and final_text[index+2] in vowles :
+				elif letter in "g" and final_text[index+1] in "n" and final_text[index+2] in vowles:
 					words.append(f"gn{final_text[index+2]}")
 					c_pass = True
 				# Special case on "gn" -> ኝ
-				elif letter in "g" and final_text[index+1] in "n" and final_text[index+2] not in vowles   :
+				elif letter in "g" and final_text[index+1] in "n" and final_text[index+2] not in vowles:
 					words.append("gn")
 					c_pass = True
 				# 3 digit alphabets -> ዘሸቸ
-				elif letter in "spcz" and final_text[index+1] in "h" and  final_text[index+2] in vowles  :
+				elif letter in "spcz" and final_text[index+1] in "h" and  final_text[index+2] in vowles:
 					words.append(f"{letter}h{final_text[index+2]}")
 					c_pass = True
 				# "sh,ph,ch,zh"
-				elif letter in "scpz" and final_text[index+1] in "h" and  final_text[index+2] not in vowles :
+				elif letter in "scpz" and final_text[index+1] in "h" and  final_text[index+2] not in vowles:
 					words.append(f"{letter}h")
 					c_pass = True
 				# Another 3 digit alphabets -> ፀ
-				elif letter in "t" and final_text[index+1] in "s" and  final_text[index+2] in vowles  :
+				elif letter in "t" and final_text[index+1] in "s" and  final_text[index+2] in vowles:
 					words.append(f"{letter}s{final_text[index+2]}")
 					c_pass = True
-				elif letter in "t" and final_text[index+1] in "s" and  final_text[index+2] not in vowles :
+				elif letter in "t" and final_text[index+1] in "s" and  final_text[index+2] not in vowles:
 					words.append(f"{letter}s")
 					c_pass = True
 				# <consonant> <vowles> that the vowle is ie | double vowle|
@@ -56,12 +58,12 @@ def sep_words(text:str) -> str:
 						words.append(f"{letter}ua")
 				# Two letters which are <consonant><vowles>
 				elif final_text[index+1] in vowles:
-					if c_pass == True :
+					if c_pass == True:
 						c_pass = False
 						pass
 					else:
 						words.append(f"{letter}{final_text[index+1]}")
-				else :
+				else:
 					if c_pass == True:
 						c_pass = False
 						pass
@@ -71,7 +73,7 @@ def sep_words(text:str) -> str:
 			# Add single vowles | የ አ ዘሮች |  
 			elif letter in vowles and final_text[index-1] not in con:
 				# Special case "ere" -> ኸረ 
-				if letter in "e" and final_text[index+1] in "r" and  final_text[index+2] in "e" and final_text[index-1] not in al_alpha and final_text[index+3] not in al_alpha :
+				if letter in "e" and final_text[index+1] in "r" and  final_text[index+2] in "e" and final_text[index-1] not in all_alpha and final_text[index+3] not in all_alpha:
 					words.append("ere")
 					c_pass = True
 				# Add single vowles "aeiou" -> | የአ ዘሮች|
@@ -79,16 +81,21 @@ def sep_words(text:str) -> str:
 					words.append("ie")
 					c_pass = True
 				else :
-					if c_pass == True :
+					if c_pass == True:
 						c_pass = False
 						pass
 					else:
 						words.append(letter)
-			# Add other characters and white spaces
-			elif letter not in al_alpha:
-				words.append(letter)
-			index += 1
+			# Add other characters including white space
+			elif letter not in all_alpha:
+				if letter == "|":
+					if len(filtered_words)-1 >= filtered_index and len(filtered_words) != 0:
+						words.append(filtered_words[filtered_index])
+						filtered_index += 1
+				else:
+					words.append(letter)
 	# Exceptional
 	except IndexError:
-		pass
+		pass 
+
 	return words
