@@ -97,7 +97,7 @@ print(reversed)
 ```
 output
 ```
-betam xru sew nw.
+betam xru sew new.
 ```
 
 
