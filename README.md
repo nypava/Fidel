@@ -1,7 +1,7 @@
 # **Fidel / ፊደል**
 ## What is **Fidel / ፊደል** ?
-**Fidel** is a python package that can change Amharic language that written in English alphabet to Amharic alphabet character. <br>
-**| For example: abebe beso bela -> አበበ በሶ በላ**
+**Fidel** is a Python package that can transliterate English characters to Geez characters and vice versa. <br>
+> **For example: abebe beso bela -> አበበ በሶ በላ**
 
 
 ## **Dependencies**
@@ -22,9 +22,9 @@ pip install --upgrade fidel
 
 ### **Basic Usage**
 ``` python
-from fidel import Translate
+from fidel import Transliterate 
 text = "bexam xru sew new"
-translated = Translate(text).translate()
+translated = Transliterate(text).transliterate()
 print(translated)
 ```
 output
@@ -34,25 +34,25 @@ output
 
 ### **Autocorrect**
 ``` python
-from fidel import Translate
+from fidel import Transliterate 
 text = "betam tiru sew nw"
-translated = Translate(text=text,autoCorrect=False).translate() # The default is False
-corrected = Translate(text=text,autoCorrect=True).translate()
+translated = Transliterate(text=text, auto_correct=False).transliterate() # The default is False
+corrected = Transliterate(text=text ,auto_correct=True).transliterate()
 print(f"Translated : {translated}")
 print(f"Corrected: {corrected}")
 
 ```
 output
 ```
-Translated : በታም ቲሩ ሰው ንው
+Translated: በታም ቲሩ ሰው ንው
 Corrected: በጣም ጥሩ ሰው ነው
 ```
 ### **Amharic Symbol**
 ``` python 
-from fidel import Translate
+from fidel import Transliterate 
 text = "abebe, kebede ena ayele bexam xru sew nachew."
-symbol_true = Translate(text=text,symbol=True).translate() # The default is True
-symbol_false = Translate(text=text,symbol=False).translate()
+symbol_true = Transliterate(text=text, symbol=True).transliterate() # The default is True
+symbol_false = Transliterate(text=text, symbol=False).transliterate()
 print(f"True symbol: {symbol_true}")
 print(f"False symbol: {symbol_false}")
 ```
@@ -61,13 +61,13 @@ output
 True symbol:  አበበ፣ ከበደ እና አየለ በጣም ጥሩ ሰው ናቸው።
 False symbol: አበበ, ከበደ እና አየለ በጣም ጥሩ ሰው ናቸው.
 ```
-### **Exclude words** and **split words**
+### **Exclude words** and **Split words**
 **Exclude words** from being translated.
 - To prevent words from being translate, put the words inside "``" 
 ``` python
-from fidel import Translate
+from fidel import Transliterate
 text = "`Alex` xru sew new"
-translated = Translate(text).translate()
+translated = Transliterate(text).transliterate()
 print(translated)
 
 ```
@@ -78,9 +78,9 @@ Alex ጥሩ ሰው ነው
 **Split words**
 - To prevent words from being ዲቃላ (The eigth letters) we should put "|" between consonants.
 ``` python
-from fidel import Translate
+from fidel import Transliterate
 text = "ljtua t|sewer" # Without "|" the output is "ልጅቷ ጸወር"
-translated = Translate(text).translate()
+translated = Transliterate(text).transliterate()
 print(translated)
 ```
 output
@@ -90,9 +90,9 @@ output
 
 ### **Reverse Translate**
 ``` python
-from fidel import Reverse
+from fidel import Transliterate
 text = "በጣም ጥሩ ሰው ነው።"
-reversed = Reverse(text, symbol=True) # The default symbol value is True 
+reversed = Transliterate(text, symbol=True).reverse_transliterate() # The default symbol value is True 
 print(reversed)
 ```
 output
@@ -100,9 +100,8 @@ output
 betam xru sew new.
 ```
 
-
 ## **Rules** 
-There are some **rules** that should be apply when writing the text.
+There are some **rules** that should be apply when writing a text.
  1. For **1st alphabets (ለግዕዝ)** use "e" example: "le" - ለ
  2. For **2nd alphabets (ለካእብ)** use "u" example: "lu" - ሉ
  3. For **3rd alphabets (ለሳልስ)** use "i" example: "li" - ሊ
@@ -112,7 +111,7 @@ There are some **rules** that should be apply when writing the text.
  7. For **7th alphabets (ለሳብዕ)** use "o" example: "lo" - ሎ
  8. For **8th alphabets(ለዲቃላ ቃላት)** use "ua" example: "ua" -  ሏ 
 
-**Note** The above rules may violate for some alphabets family check out ambiguous alphabets.
+**Note** The above rules may be violated for some alphabets families. Check out ambiguous alphabets.
 ## **Ambiguous alphabets**
 
 | ግዕዝ | ካእብ | ሳልስ | ራዕብ | ሀምስ | ሳድስ | ሳብዕ |
