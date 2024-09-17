@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fidel"
+version = "0.0.9"
+description = 'Python package that translite Geez character to Latin character and vice versa.'
+authors = [{name = "ny", email = "ny.dev0.em@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.8"
+classifier = [
+  "Programming Language :: Python",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+]
+keywords = ['python', 'amharic', 'english to amharic', 'ethiopia', 'translate', 'fidel']
+
+dependencies = ["symspellpy == 6.7.1" ]
+
+[project.urls]
+Homepage = "https://github.com/nypava/Fidel"
+Repository = "https://github.com/nypava/Fidel"
+
+[tool.hatch.build.targets.wheel]
+include = ["fidel/*"]
