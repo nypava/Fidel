@@ -1,6 +1,6 @@
 # **Fidel / ፊደል**
 ## What is **Fidel / ፊደል** ?
-**Fidel** is a Python package that can transliterate English characters to Geez characters and vice versa. <br>
+**Fidel** is a Python package that can transliterate Latin characters to Geez characters and vice versa. <br>
 > **For example: abebe beso bela -> አበበ በሶ በላ**
 
 
@@ -37,7 +37,7 @@ output
 from fidel import Transliterate 
 text = "betam tiru sew nw"
 translated = Transliterate(text=text, auto_correct=False).transliterate() # The default is False
-corrected = Transliterate(text=text ,auto_correct=True).transliterate()
+corrected = Transliterate(text=text, auto_correct=True).transliterate()
 print(f"Translated : {translated}")
 print(f"Corrected: {corrected}")
 
@@ -67,8 +67,8 @@ False symbol: አበበ, ከበደ እና አየለ በጣም ጥሩ ሰው ና�
 ``` python
 from fidel import Transliterate
 text = "`Alex` xru sew new"
-translated = Transliterate(text).transliterate()
-print(translated)
+transliterated = Transliterate(text).transliterate()
+print(transliterated)
 
 ```
 output
@@ -80,8 +80,8 @@ Alex ጥሩ ሰው ነው
 ``` python
 from fidel import Transliterate
 text = "ljtua t|sewer" # Without "|" the output is "ልጅቷ ጸወር"
-translated = Transliterate(text).transliterate()
-print(translated)
+transliterated = Transliterate(text).transliterate()
+print(transliterated)
 ```
 output
 ```
