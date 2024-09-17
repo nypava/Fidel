@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fidel"
-version = "0.0.9"
+version = "0.1.0"
 description = 'Python package that translite Geez character to Latin character and vice versa.'
 authors = [{name = "ny", email = "ny.dev0.em@gmail.com"}]
 readme = "README.md"
