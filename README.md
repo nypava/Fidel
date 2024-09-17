@@ -24,8 +24,8 @@ pip install --upgrade fidel
 ``` python
 from fidel import Transliterate 
 text = "bexam xru sew new"
-translated = Transliterate(text).transliterate()
-print(translated)
+transliterated = Transliterate(text).transliterate()
+print(transliterated)
 ```
 output
 ```
@@ -36,9 +36,9 @@ output
 ``` python
 from fidel import Transliterate 
 text = "betam tiru sew nw"
-translated = Transliterate(text=text, auto_correct=False).transliterate() # The default is False
+transliterated = Transliterate(text=text, auto_correct=False).transliterate() # The default is False
 corrected = Transliterate(text=text, auto_correct=True).transliterate()
-print(f"Translated : {translated}")
+print(f"Transliterated: {transliterated}")
 print(f"Corrected: {corrected}")
 
 ```
@@ -62,8 +62,8 @@ True symbol:  አበበ፣ ከበደ እና አየለ በጣም ጥሩ ሰው �
 False symbol: አበበ, ከበደ እና አየለ በጣም ጥሩ ሰው ናቸው.
 ```
 ### **Exclude words** and **Split words**
-**Exclude words** from being translated.
-- To prevent words from being translate, put the words inside "``" 
+**Exclude words** from being transliterated.
+- To prevent words from being transliterate, put the words inside "``" 
 ``` python
 from fidel import Transliterate
 text = "`Alex` xru sew new"
