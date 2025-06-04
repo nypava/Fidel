@@ -107,7 +107,7 @@ There are some **rules** that should be apply when writing a text.
  3. For **3rd alphabets (ለሳልስ)** use "i" example: "li" - ሊ
  4. For **4rh alphabets (ለራዕብ)** use "a" example: "la" - ላ
  5. For **5th alphabets (ለሀምስ)** use "ie" example: "lie" - ሌ
- 6. For **6th alphabets (ለሳድስ)** use only vowel example: "l" - ል
+ 6. For **6th alphabets (ለሳድስ)** use only consonant example: "l" - ል
  7. For **7th alphabets (ለሳብዕ)** use "o" example: "lo" - ሎ
  8. For **8th alphabets(ለዲቃላ ቃላት)** use "ua" example: "ua" -  ሏ 
 
