@@ -30,6 +30,7 @@ class Transliterate:
             str: The transliterated text.
         '''
         transliterated_text = self._transliterate()
+		transliterated_text.lower()
         if self.auto_correct:
             return self._auto_correct(transliterated_text)
 
